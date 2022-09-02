@@ -9,7 +9,7 @@ and has private instance size
 
 class Square:
     """Square Class
-    This square has a size an area a setter and a getter
+    This square has a size an area a setter and a getter and a printer
     """
 
     def __init__(self, size=0):
@@ -23,6 +23,19 @@ class Square:
         returns area of square
         """
         return self.__size * self.__size
+
+    def my_print(self):
+        """my_print
+        prints the square
+        """
+        if self.__size == 0:
+            print()
+            return None
+
+        for i in range(self.__size):
+            for i in range(self.__size):
+                print('#', end='')
+            print()
 
     @property
     def size(self):

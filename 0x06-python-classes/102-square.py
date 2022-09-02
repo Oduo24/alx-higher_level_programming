@@ -12,6 +12,24 @@ class Square:
     This square has a size an area a setter and a getter
     """
 
+    def __eq__(self, other):
+        return self.__size == other.__size
+
+    def __lt__(self, other):
+        return self.size < other.size
+
+    def __le__(self, other):
+        return self.size <= other.size
+
+    def __ne__(self, other):
+        return self.size != other.size
+
+    def __gt__(self, other):
+        return self.size > other.size
+
+    def __ge__(self, other):
+        return self.size >= other.size
+
     def __init__(self, size=0):
         """__init__
         initializing square

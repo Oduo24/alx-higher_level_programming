@@ -1,13 +1,14 @@
 #!/usr/bin/node
-const arg = process.argv.slice(2);
-if (arg.length === 0 || arg.length === 1) {
-  console.log('0');
+if (process.argv.length === 2) {
+  console.log(`0`);
+}else if (process.argv.length === 3) {
+  console.log(`0`);
 }
 
 function toInt (a) {
   return parseInt(a);
 }
 
-const newList = arg.map(toInt);
+const newList = process.argv.map(toInt);
 const sortedList = newList.sort(function (a, b) { return a - b; });
 console.log(sortedList[1]);

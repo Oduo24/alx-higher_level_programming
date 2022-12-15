@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-"""2-post_email module"""
+""" Script that takes in a URL and an email, sends a POST request
+ And displays the body of the response
+"""
 
-import urllib.request
+import sys
 import urllib.parse
-from sys import argv
+import urllib.request
+
 
 if __name__ == "__main__":
-    my_val = urllib.parse.urlencode({'email': argv[2]}).encode('ascii')
-    url = argv[1]
-    req = urllib.request.Request(
-        url, my_val, method='POST')
-    with urllib.request.urlopen(req) as my_url:
-        html = my_url.read()
-        print(html.decode('utf-8'))
+    url = sys.argv[1]
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(value).encode("ascii")
+
+    request = urllib.request.Request(url, data)
+    with urllib.request.urlopen(request) as resp:
+        print(resp.read().decode("utf-8"))

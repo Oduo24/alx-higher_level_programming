@@ -1,3 +1,3 @@
 #!/bin/bash
-#Takes in a url and displays the http methods allowed by the server
-curl -sI -X OPTIONS google.com | grep "Allow:" | cut -d':' -f2 | sed "s/ //"
+# Script that takes in a URL and displays all HTTP methods the server will accept
+curl -sI "$1" | grep "Allow" | cut -d " " -f2-

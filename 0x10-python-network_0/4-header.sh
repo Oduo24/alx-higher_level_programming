@@ -1,3 +1,3 @@
 #!/bin/bash
-# takes in a URL and displays all HTTP methods the server will accept.
-curl -s -X GET -H "X-HolbertonSchool-User-Id: 98" $1
+# Script that sends a GET request to URL and displays body of response
+curl -sH "X-School-User-Id: 98" "$1"
